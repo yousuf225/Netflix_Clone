@@ -20,7 +20,7 @@ export default async function UserNav(){
             <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="flex flex-col space-y-1">
                     <p className=" text-sm font-medium leading-none">RY</p>
-                    <p className=" text-xs leading-none text-muted-foreground">syiyuyh@gmail.com </p>
+                    <p className=" text-xs leading-none text-muted-foreground">syiyuyh@gmail.com</p>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={()=>signOut()} className=" cursor-pointer">Sign out</DropdownMenuItem>
