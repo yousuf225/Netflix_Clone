@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { signOut } from "next-auth/react";
 
-export default function UserNav(){
-    
+export default async function UserNav(){
     return(
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -21,7 +20,7 @@ export default function UserNav(){
             <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="flex flex-col space-y-1">
                     <p className=" text-sm font-medium leading-none">RY</p>
-                    <p className=" text-xs leading-none text-muted-foreground">syuyg@gmail.com</p>
+                    <p className=" text-xs leading-none text-muted-foreground">syiyuyh@gmail.com </p>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={()=>signOut()} className=" cursor-pointer">Sign out</DropdownMenuItem>
