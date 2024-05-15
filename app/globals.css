@@ -1,6 +1,6 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   
 @layer base {
@@ -56,6 +56,6 @@
       @apply border-border;
     }
     body {
-      @apply bg-black text-foreground;
+      @apply bg-background text-foreground;
     }
   }
