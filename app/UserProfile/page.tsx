@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+"use client"
 import { useSession } from "next-auth/react"
 
 export default function UserProfile(){
