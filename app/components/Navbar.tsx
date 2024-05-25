@@ -50,7 +50,7 @@ export default function Navbar() {
                     </ul>
                 </div>
 
-                <div className="flex text-gray-300 items-center gap-x-8">
+                <div className="flex text-gray-300 items-center gap-x-4 lg:gap-8 md:gap-7">
                     <Search className="w-5 h-5 text-gray-300 cursor-pointer" />
                     <Bell className="w-5 h-5 text-gray-300 cursor-pointer" />
                     <UserNav />
