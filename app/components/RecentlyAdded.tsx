@@ -1,4 +1,3 @@
-import { Award } from "lucide-react";
 import prisma from "../utils/db"
 import Image from "next/image";
 import MovieCard from "./Moviecard";
