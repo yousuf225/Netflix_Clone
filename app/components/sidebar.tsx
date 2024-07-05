@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTrigger, } from "@/components/ui/sheet";
-import { Menu} from "lucide-react";
+import { Menu, SidebarClose} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -34,14 +34,16 @@ export default function SideBar(){
                 </SheetTrigger>
                 <SheetContent side={"left"} className=" text-red-600 text-2xl font-bold px-3 py-4">
                 <h1>NETFLIX</h1>
-           
+                
                     <ul className=" flex flex-col gap-y-6 mt-10">
                         {links.map((link, idx) => (
                             <div key={idx}>
                                 {pathName === link.href ? ( 
-                                  <li><SheetClose asChild><Link href={link.href} className=" text-white font-semibold text-lg">
-                                        {link.name}
-                                    </Link></SheetClose>
+                                  <li><SheetClose asChild>
+                                    <Link href= {link.href} type='submit' className=" text-white font-semibold text-lg">
+                                     {link.name}
+                                    </Link>
+                                    </SheetClose>
                                     </li>
                                    ) : (
                                     <li><Link href={link.href} className=" text-gray-300 text-lg font-normal">
