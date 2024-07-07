@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { signOut } from "next-auth/react";
-import { SignOutButton } from "@clerk/clerk-react";
+import { SignOutButton, UserButton } from "@clerk/clerk-react";
 import UserProfile from "../UserProfile/page";
 
 export default async function UserNav(){
@@ -23,6 +23,7 @@ export default async function UserNav(){
             <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="flex flex-col space-y-1">
                     <UserProfile/>
+                <UserButton afterSwitchSessionUrl="/login"/>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className=" cursor-pointer">
