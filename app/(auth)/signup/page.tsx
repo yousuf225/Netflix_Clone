@@ -6,13 +6,12 @@ import Link from "next/link";
 import GithubSigninButton from "@/app/components/GithubButton";
 import GoogleSigninButton from "@/app/components/GoogleButton";
 import { useState } from "react";
-import { useSignUp } from "@clerk/nextjs";
+import { useSession, useSignUp } from "@clerk/nextjs";
 import {ClerkAPIError} from "@clerk/types"
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { isClerkAPIResponseError } from "@clerk/clerk-react/errors";
 
 export default function signUp(){
-   /*  const session = await getServerSession(authOptions) */
     
     const { isLoaded, signUp, setActive } = useSignUp();
     const [fullname, setFullname] = useState('');
@@ -21,9 +20,6 @@ export default function signUp(){
     const [pendingverification, setPendingVerification] = useState(false);
     const [code, setCode] = useState('');
     const [errors, setErrors] = useState<ClerkAPIError[]>();
-    /* if (session) {
-        return redirect('/home')
-    } */
     const router = useRouter();
 
     const handleSubmit = async (e: { preventDefault: () => void; }) =>{
@@ -65,8 +61,7 @@ export default function signUp(){
             console.error(JSON.stringify(error, null, 2));
         }
     }
-
-
+    
     return(
         <div className=" mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-sm md:px-14">
         {!pendingverification &&(

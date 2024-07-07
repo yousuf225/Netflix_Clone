@@ -6,10 +6,10 @@ import Link from "next/link";
 import GithubSigninButton from "@/app/components/GithubButton";
 import GoogleSigninButton from "@/app/components/GoogleButton";
 import { useState } from "react";
-import { useSignIn } from "@clerk/nextjs";
+import { useSession, useSignIn } from "@clerk/nextjs";
 import { ClerkAPIError } from "@clerk/types";
 import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
-import { useRouter } from "next/navigation"; // Changed to correct router import
+import { redirect, useRouter } from "next/navigation"; // Changed to correct router import
 
 export default function login() {
     const { isLoaded, signIn, setActive } = useSignIn();
@@ -18,6 +18,7 @@ export default function login() {
     const [errors, setErrors] = useState<ClerkAPIError[]>(); // Changed to useState for consistency
 
     const router = useRouter();
+   
 
     const handleSubmit = async (e: any) => {
         e.preventDefault(); // Corrected preventDefault to lowercase
@@ -45,7 +46,10 @@ export default function login() {
             console.log(JSON.stringify(err, null, 2));
         }
     }
-
+    const {session} = useSession();
+    if (session) {
+      return  redirect('/home')
+    }
     return (
         <div className="mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-sm md:px-14">
             <form onSubmit={handleSubmit}>
