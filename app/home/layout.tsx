@@ -5,17 +5,18 @@ import { redirect } from "next/navigation";
 import Navbar from "../components/Navbar";
 
 export default async function Homelayout({children}:{children:ReactNode}){
-   /*  const session = await getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
     
     if (!session) {
         return redirect('/login')
-    } */
-    return(
-    <>
-        <Navbar />
-        <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
-        {children} 
-        </main>
-    </>
-    )
+    }
+        return(
+        <>
+            <Navbar />
+            <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
+            {children} 
+            </main>
+        </>
+        )
+    
 }

@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function GoogleSigninButton(){
     return(
         <Button onClick={() => signIn('google')} variant="outline" size="icon">
-                    <Image src={GoogleIcon} alt="Google icon"/>
-                </Button>
+            <Image src={GoogleIcon} alt="Google icon" className="w-6 h-6"/>
+        </Button>
     )
 }

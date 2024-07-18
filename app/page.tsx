@@ -1,13 +1,14 @@
 import { redirect } from "next/navigation";
-import { auth } from "@clerk/nextjs/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./utils/auth";
 
 
 
 export default async function Home() {
 
-  const user = auth();
+const session = await getServerSession(authOptions)  
  
-if (!user) {
+if (!session) {
     return redirect('/login')
   }else{
     return redirect('/home')
