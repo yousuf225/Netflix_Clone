@@ -25,7 +25,12 @@ export const authOptions = {
         server: process.env.EMAIL_SERVER,
         from: process.env.EMAIL_FROM
       }),
-  
     ],
+
+    secret : process.env.NEXTAUTH_URL,
+    session : {
+      strategy : 'jwt'
+    },
+    debug : true
 
 } satisfies NextAuthOptions;
