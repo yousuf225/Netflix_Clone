@@ -165,11 +165,12 @@ export default function SeedDatabase(){
               },
             ],
           });
+          console.log("Seeded successfully!");
     }
     return(
         <div className="m-2">
             <form action={postData}>
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Seed Movies</Button>
             </form>
         </div>    
     )

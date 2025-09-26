@@ -6,7 +6,7 @@ import Logo from "@/public/netflix_logo.svg"
 
 export default function AuthLayout({children}: {children:ReactNode}){
    return(
-    <div className=" relative flex flex-col bg-black h-screen w-screen md:items-center md:justify-center md:bg-transparent">
+    <div className="relative flex flex-col bg-black h-screen w-screen md:items-center md:justify-center md:bg-transparent">
 
         <Image 
         src={Backgroundimage} 
